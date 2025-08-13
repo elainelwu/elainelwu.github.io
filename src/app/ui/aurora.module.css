@@ -1,0 +1,99 @@
+@keyframes rotateClockwise {
+  100% {
+    transform: rotate(1turn) translate(100px) rotate(-1turn);
+  }
+}
+
+@keyframes rotateCounterClockwise {
+  100% {
+    transform: rotate(-1turn) translate(100px) rotate(1turn);
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+.container {
+  background-color: aquamarine;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+.base {
+  position: absolute;
+  filter: blur(60px);
+  opacity: 0.8;
+}
+
+.top_left,
+.bot_right,
+.bot-left,
+.top-right {
+  position: absolute;
+  border-radius: 100%;
+}
+
+.top_left {
+  width: 85%;
+  height: 90%;
+  left: -30%;
+  top: -35%;
+  z-index: -1;
+  animation: rotateClockwise 12s linear infinite;
+  transform: rotate(0) translate(80px) rotate(0);
+}
+
+.bot_left {
+  width: 80%;
+  height: 85%;
+  left: -20%;
+  bottom: -20%;
+  z-index: -3;
+  animation: rotateClockwise 10s linear infinite;
+  transform: rotate(0) translate(80px) rotate(0);
+}
+
+.bot_right {
+  width: 80%;
+  height: 80%;
+  right: -20%;
+  bottom: -40%;
+  z-index: -2;
+  animation: rotateClockwise 8s linear infinite;
+  transform: rotate(0) translate(80px) rotate(0);
+}
+
+.top_right {
+  width: 80%;
+  height: 90%;
+  right: -20%;
+  top: -10%;
+  z-index: -4;
+  animation: rotateCounterClockwise 20s linear infinite;
+  transform: rotate(0) translate(100px) rotate(0);
+}
+
+.indigo {
+  background-color: #604db7;
+}
+
+.violet {
+  background-color: #7f48a4;
+}
+
+.pink {
+  background-color: #cf7b9f;
+}
+
+.blue {
+  background-color: #3261c8;
+}
