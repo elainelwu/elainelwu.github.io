@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function NavBar() {
   return (
     <nav className="flex flex-row w-full justify-between px-6 pl-10 pr-12 py-6 z-20 sticky top-0 font-semibold">
-      <Link href="/">
+      <Link href="#home">
         <Image src="/nav-logo.svg"
           alt="Portfolio home"
           width={50}
