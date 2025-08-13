@@ -60,7 +60,7 @@ export default function Home() {
               </Link>
               ,
             </h1>
-            <p className="text-4xl mt-4">
+            <p className="text-4xl">
               a senior studying computer science at Cornell.
             </p>
           </div>

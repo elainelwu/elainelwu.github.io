@@ -1,7 +1,11 @@
-import { Syne } from 'next/font/google'
+import { Syne, Poppins } from 'next/font/google'
 import './globals.css'
 
 const syne = Syne({ subsets: ['latin'] })
+const poppins = Poppins({ 
+  subsets: ['latin'], 
+  weight: '400' 
+});
 
 export const metadata = {
   title: 'Elaine Wu',
@@ -11,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={syne.className}>{children}</body>
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }

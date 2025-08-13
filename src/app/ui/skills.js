@@ -13,7 +13,7 @@ export default function Skills() {
         <h2 className="text-3xl font-semibold mb-4">Languages</h2>
         <ul className={listClasses}>
           {["Python", "Java", "C", "OCaml", "HTML/CSS", "JavaScript"].map(lang => (
-            <li key={lang} className="bg-white px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
+            <li key={lang} className="bg-white bg-opacity-90 px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
               {lang}
             </li>
           ))}
@@ -24,7 +24,7 @@ export default function Skills() {
         <h2 className="text-3xl font-semibold mb-4">Frameworks</h2>
         <ul className={listClasses}>
           {["React", "Tailwind CSS", "Next.js", "Node.js"].map(fw => (
-            <li key={fw} className="bg-white px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
+            <li key={fw} className="bg-white bg-opacity-90 px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
               {fw}
             </li>
           ))}
@@ -35,7 +35,7 @@ export default function Skills() {
         <h2 className="text-3xl font-semibold mb-4">Libraries</h2>
         <ul className={listClasses}>
           {["D3.js", "NumPy", "Matplotlib", "pandas", "PyTorch", "CVXPY", "Gurobi"].map(lib => (
-            <li key={lib} className="bg-white px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
+            <li key={lib} className="bg-white bg-opacity-90 px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
               {lib}
             </li>
           ))}
@@ -46,7 +46,7 @@ export default function Skills() {
         <h2 className="text-3xl font-semibold mb-4">Tools</h2>
         <ul className={listClasses}>
           {["GitHub", "Figma", "Adobe Photoshop", "Adobe Premiere Pro", "Canva"].map(tool => (
-            <li key={tool} className="bg-white px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
+            <li key={tool} className="bg-white bg-opacity-90 px-2 py-1 rounded-md text-gray-800 mr-2 mb-2">
               {tool}
             </li>
           ))}
