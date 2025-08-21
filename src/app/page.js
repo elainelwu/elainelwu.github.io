@@ -5,6 +5,7 @@ import Aurora from "@/app/ui/aurora.js";
 import NavBar from "@/app/ui/nav-bar.js";
 import AboutContent from "@/app/ui/about.js";
 import Skills from "@/app/ui/skills.js";
+import Projects from "@/app/ui/projects.js";
 
 function SnapSection({ id, children }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -75,12 +76,6 @@ export default function Home() {
           <div className="flex flex-col items-center max-w-5xl px-6">
             <h1 className="text-6xl mb-12 font-semibold">About</h1>
             <AboutContent />
-            {/* <hr className="w-24 h-1 mx-auto my-8 bg-white border-0 rounded" /> */}
-            {/* <div className="flex justify-center my-8 space-x-2">
-              <span className="w-1 h-1 bg-white rounded-full"></span>
-              <span className="w-1 h-1 bg-white rounded-full"></span>
-              <span className="w-1 h-1 bg-white rounded-full"></span>
-            </div> */}
             <div className="mt-12">
               <Skills />
             </div>
@@ -88,8 +83,9 @@ export default function Home() {
         </SnapSection>
 
         <SnapSection id="work">
-          <div className="flex flex-col items-center max-w-5xl px-6">
-            <h1 className="text-6xl font-semibold">coming soon...</h1>
+          <div className="flex flex-col items-center max-w-7xl px-6">
+            {/* <h1 className="text-6xl mb-12 font-semibold">Projects</h1> */}
+            <Projects />
           </div>
         </SnapSection>
       </main>

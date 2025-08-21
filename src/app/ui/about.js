@@ -21,19 +21,18 @@ export default function AboutContent() {
           {/* <p className="font-normal mt-0">ew457@cornell.edu</p> */}
           <div className="flex flex-row space-x-3 mt-4">
             <Link href="mailto:ew457@cornell.edu">
-              {/* <Mail size={36} className="cursor-pointer hover:text-blue-600 transition" /> */}
-              <div className="bg-white bg-opacity-90 rounded-md p-2 cursor-pointer hover:bg-gray-800 transition">
-                <Mail size={32} className="text-slate-800 cursor-pointer hover:text-white transition" />
+              <div className="bg-white bg-opacity-90 rounded-md p-2 hover:bg-gray-800 transition">
+                <Mail size={32} className="text-slate-800 hover:text-white transition" />
               </div>
             </Link>
             <Link href="https://www.linkedin.com/in/elaine-wu-09440620b/">
-              <div className="bg-white bg-opacity-90 rounded-md p-2 cursor-pointer hover:bg-gray-800 transition">
-                <Linkedin size={32} className="text-slate-800 cursor-pointer hover:text-white transition" />
+              <div className="bg-white bg-opacity-90 rounded-md p-2 hover:bg-gray-800 transition">
+                <Linkedin size={32} className="text-slate-800 hover:text-white transition" />
               </div>
             </Link>
             <Link href="https://github.com/elainelwu">
-              <div className="bg-white bg-opacity-90 rounded-md p-2 cursor-pointer hover:bg-gray-800 transition">
-                <Github size={32} className="text-slate-800 cursor-pointer hover:text-white transition" />
+              <div className="bg-white bg-opacity-90 rounded-md p-2 hover:bg-gray-800 transition">
+                <Github size={32} className="text-slate-800 hover:text-white transition" />
               </div>
             </Link>
           </div>
