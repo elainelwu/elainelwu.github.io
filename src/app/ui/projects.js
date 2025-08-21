@@ -8,9 +8,9 @@ export default function Projects() {
 
   // wickpick images
   const wickpickImages = [
-    "/wickpick_home.svg",
-    "/wickpick_details.svg",
-    "/wickpick_query.svg"
+    "wickpick_home.svg",
+    "wickpick_details.svg",
+    "wickpick_query.svg"
   ];
   const [wickpickIndex, setWickpickIndex] = useState(0);
 
@@ -23,9 +23,9 @@ export default function Projects() {
 
   // super hamster party images
   const hamsterImages = [
-    "/shp_home.svg",
-    "/shp_lobby.svg",
-    "/shp_inventory.svg"
+    "shp_home.svg",
+    "shp_lobby.svg",
+    "shp_inventory.svg"
   ];
   const [hamsterIndex, setHamsterIndex] = useState(0);
 
