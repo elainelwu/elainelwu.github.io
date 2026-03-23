@@ -8,9 +8,9 @@ export default function Projects() {
 
   // wickpick images
   const wickpickImages = [
-    "wickpick_home.svg",
-    "wickpick_details.svg",
-    "wickpick_query.svg"
+    "/wickpick_home.svg",
+    "/wickpick_details.svg",
+    "/wickpick_query.svg"
   ];
   const [wickpickIndex, setWickpickIndex] = useState(0);
 
@@ -23,11 +23,52 @@ export default function Projects() {
 
   // super hamster party images
   const hamsterImages = [
-    "shp_home.svg",
-    "shp_lobby.svg",
-    "shp_inventory.svg"
+    "/shp_home.svg",
+    "/shp_lobby.svg",
+    "/shp_inventory.svg"
   ];
   const [hamsterIndex, setHamsterIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHamsterIndex(prev => (prev + 1) % hamsterImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // plotholes
+  const plotholesImages = [
+    "/plotholes_home.svg",
+  ];
+  const [plotholesIndex, setPlotholesIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPlotholesIndex(prev => (prev + 1) % plotholesImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // plotholes
+  const feelscapeImages = [
+    "/feelscape_home.svg",
+    "/feelscape_visualizer.svg",
+  ];
+  const [feelscapeIndex, setFeelscapeIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFeelscapeIndex(prev => (prev + 1) % feelscapeImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPlotholesIndex(prev => (prev + 1) % plotholesImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -90,8 +131,9 @@ export default function Projects() {
             <Link href="http://4300showcase.infosci.cornell.edu:5253/">
               <h2 className="text-3xl font-bold hover:text-[#3261c8] transition">🕯️ WickPick </h2>
             </Link>
-            <h4 className="text-xl font-medium">Full-Stack Candle Recommender</h4>
-            <p>
+            <h4 className="text-lg font-medium">Full-Stack Candle Recommendation Engine</h4>
+            <p>Many online stores make it difficult for users to discover products through descriptive searches like moods or scents. WickPick solves this by providing personalized candle recommendations based on natural language queries. Our team built a full-stack web application using Flask, JavaScript, and Python, where I helped implement an information retrieval pipeline using TF-IDF, SVD, cosine similarity, and fuzzy matching to rank relevant products. I also helped build the frontend visualizations describing scent relationships using interactive D3.js charts. This project demonstrates how NLP and information retrieval techniques can improve product discovery. </p>
+            {/* <p>
               WickPick is a final project for CS 4300: Language and Information (Spring 2025) that I built in a team of five to combine
               my love of data science with the surprisingly complex world of candle shopping. We wanted to create a tool
               that could help users discover new Yankee Candle scents tailored to their moods, seasonal preferences, and even
@@ -113,7 +155,61 @@ export default function Projects() {
               <li>
                 Collaborated with teammates on backend API endpoints and frontend design, ensuring a cohesive user experience across devices with responsive layouts and smooth animations.
               </li>
-            </ul>
+            </ul> */}
+          </div>
+        </div>
+
+        {/* plotholes */}
+        <div className="flex flex-col lg:flex-row items-start gap-6 w-full flex-shrink-0 snap-center p-4">
+          {/* images */}
+          <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
+            {plotholesImages.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt={`Plotholes image ${i + 1}`}
+                fill
+                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
+                  i === plotholesIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* scrollable text */}
+          <div className="flex-1 lg:max-h-[424px] overflow-y-auto p-6 bg-white bg-opacity-90 rounded-md text-gray-800 space-y-3 text-base">
+            <Link href="https://github.com/GraceW03/Plotholes">
+              <h2 className="text-3xl font-bold hover:text-[#3261c8] transition">🚗 Plotholes</h2>
+            </Link>
+            <h4 className="text-xl font-medium">Pothole Detection Platform (HackUMass 2025 Winner)</h4>
+            <p>Cities often lack clear tools for visualizing road damage and prioritizing repairs. Plotholes is a platform that maps potholes using public data, user reports, and computer vision. I built the interactive frontend using React, Next.js, and Leaflet.js, implementing dynamic heatmaps, filters, and geospatial overlays to visualize road damage patterns. The system integrates NYC 311 data, HuggingFace computer vision models, Snowflake APIs, and a Flask backend. Our project won the hackathon’s Best Use of Snowflake API award.</p>
+          </div>
+        </div>
+
+        {/* feelscape */}
+        <div className="flex flex-col lg:flex-row items-start gap-6 w-full flex-shrink-0 snap-center p-4">
+          {/* images */}
+          <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
+            {feelscapeImages.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt={`Feelscape image ${i + 1}`}
+                fill
+                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
+                  i === feelscapeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* scrollable text */}
+          <div className="flex-1 lg:max-h-[424px] overflow-y-auto p-6 bg-white bg-opacity-90 rounded-md text-gray-800 space-y-3 text-base">
+            <Link href="https://github.com/shilpishah/feelscape">
+              <h2 className="text-3xl font-bold hover:text-[#3261c8] transition">🧠 Feelscape</h2>
+            </Link>
+            <h4 className="text-xl font-medium">Emotion-Responsive Environment (HackMIT 2025)</h4>
+            <p>Digital environments rarely adapt to a user’s emotional state. Feelscape creates an immersive experience that transforms real-time biometric data into dynamic visuals and music. Our team built a full-stack pipeline using React, Next.js, Flask, and Node.js that integrates CNN-based emotion detection with generative image and music models. One key challenge was maintaining low latency across multiple AI pipelines, which we solved by designing an efficient real-time processing system. The project demonstrates how AI and biometrics can power interactive, emotion-aware environments.</p>
           </div>
         </div>
 
@@ -139,11 +235,9 @@ export default function Projects() {
             <h2 className="text-3xl font-bold">🐹 Super Hamster Party!</h2>
             <h4 className="text-xl font-medium">Turn-based Multi-player Game</h4>
             <p>
-              Super Hamster Party is a final project for CS 3110: Data Structures and Functional Programming (Fall 2023) that I built in a team of four. 
-              Loosely based on the popular game Super Mario Party, it is a turn-based multiplayer board game featuring mini-games, items,
-              and a virtual currency system, all written from scratch in OCaml. 
+              Super Hamster Party is a final project for CS 3110: Data Structures and Functional Programming (Fall 2023) that I built in a team of four. Loosely based on the popular game Super Mario Party, it is a turn-based multiplayer board game featuring mini-games, items, and a virtual currency system, all written from scratch in OCaml. 
             </p>
-            <ul className="ml-6 list-disc space-y-1">
+            {/* <ul className="ml-6 list-disc space-y-1">
               <li><span className="font-semibold">Stack:</span> OCaml, Bogue (GUI Library), Git, GitHub</li>
               <li>
                 Helped implement core backend game logic and interactive GUI components with Bogue (OCaml GUI library) for item management, player inventory, and mini-game rewards, and contributed to the player status tracker interface.
@@ -154,7 +248,7 @@ export default function Projects() {
               <li>
                 Conducted comprehensive testing through black-box, glass-box, and visual validation to guarantee correctness, usability, and stability of gameplay.
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
 
