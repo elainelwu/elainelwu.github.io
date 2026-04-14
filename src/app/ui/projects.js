@@ -47,7 +47,7 @@ export default function Projects() {
     return () => clearInterval(interval);
   }, []);
 
-  // plotholes
+  // feelscape
   const feelscapeImages = [
     "/feelscape_home.svg",
     "/feelscape_visualizer.svg",
@@ -67,13 +67,17 @@ export default function Projects() {
         <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            <Image
-              key={wickpickIndex}
-              src={wickpickImages[wickpickIndex]}
-              alt={`WickPick image ${wickpickIndex + 1}`}
-              fill
-              className="object-contain"
-            />
+            {wickpickImages.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt={`WickPick image ${i + 1}`}
+                fill
+                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
+                  i === wickpickIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              />
+            ))}
           </div>
 
           {/* scrollable text */}
@@ -113,13 +117,17 @@ export default function Projects() {
         <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            <Image
-              key={plotholesIndex}
-              src={plotholesImages[plotholesIndex]}
-              alt={`Plotholes image ${plotholesIndex + 1}`}
-              fill
-              className="object-contain"
-            />
+            {plotholesImages.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt={`Plotholes image ${i + 1}`}
+                fill
+                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
+                  i === plotholesIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              />
+            ))}
           </div>
 
           {/* scrollable text */}
@@ -136,13 +144,17 @@ export default function Projects() {
         <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            <Image
-              key={feelscapeIndex}
-              src={feelscapeImages[feelscapeIndex]}
-              alt={`Feelscape image ${feelscapeIndex + 1}`}
-              fill
-              className="object-contain"
-            />
+            {feelscapeImages.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt={`Feelscape image ${i + 1}`}
+                fill
+                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
+                  i === feelscapeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              />
+            ))}
           </div>
 
           {/* scrollable text */}
@@ -159,13 +171,17 @@ export default function Projects() {
         <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            <Image
-              key={hamsterIndex}
-              src={hamsterImages[hamsterIndex]}
-              alt={`Super Hamster Party image ${hamsterIndex + 1}`}
-              fill
-              className="object-contain"
-            />
+            {hamsterImages.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt={`Super Hamster Party image ${i + 1}`}
+                fill
+                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
+                  i === hamsterIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              />
+            ))}
           </div>
 
           {/* scrollable text */}
