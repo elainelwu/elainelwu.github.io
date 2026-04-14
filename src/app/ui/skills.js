@@ -1,6 +1,6 @@
 export default function Skills() {
   const sectionClasses = "flex flex-col items-center flex-1 px-4";
-  const listClasses = "font-medium flex flex-wrap justify-center items-center text-";
+  const listClasses = "font-medium flex flex-wrap justify-center items-center";
 
   return (
     <div className="w-full grid gap-8 

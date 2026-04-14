@@ -7,7 +7,7 @@ import AboutContent from "@/app/ui/about.js";
 import Skills from "@/app/ui/skills.js";
 import Projects from "@/app/ui/projects.js";
 
-function SnapSection({ id, children }) {
+function SnapSection({ id, children, fullScreen = true }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function SnapSection({ id, children }) {
   return (
     <section
       id={id}
-      className={`snap-start flex items-center justify-center h-screen w-screen transition-opacity duration-600 ${
+      className={`snap-start flex items-center justify-center ${fullScreen ? "h-screen w-screen" : "w-full"} transition-opacity duration-600 ${
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -48,7 +48,7 @@ export default function Home() {
         <NavBar />
       </div>
 
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+      <main className="min-h-screen overflow-y-auto scroll-smooth snap-y snap-mandatory">
         <SnapSection id="home">
           <div className="relative max-w-4xl px-6 font-semibold">
             <h1 className="text-8xl font-semibold">
@@ -79,12 +79,17 @@ export default function Home() {
             <div className="mt-12">
               <Skills />
             </div>
+            <div className="mt-12 text-lg text-white animate-bounce select-none">
+              <Link href="#work">
+                <button>↓</button>
+              </Link>
+            </div>
           </div>
         </SnapSection>
 
         <SnapSection id="work">
-          <div className="flex flex-col items-center max-w-7xl px-6">
-            {/* <h1 className="text-6xl mb-12 font-semibold">Projects</h1> */}
+          <div className="flex flex-col items-center max-w-7xl px-6 h-full w-full overflow-y-auto py-10">
+            <h1 className="text-6xl mb-12 font-semibold">Work</h1>
             <Projects />
           </div>
         </SnapSection>

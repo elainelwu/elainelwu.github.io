@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Projects() {
-  const containerRef = useRef(null);
 
   // wickpick images
   const wickpickImages = [
@@ -63,67 +61,19 @@ export default function Projects() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPlotholesIndex(prev => (prev + 1) % plotholesImages.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHamsterIndex(prev => (prev + 1) % hamsterImages.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // scroll handler
-  const scroll = (direction) => {
-    if (!containerRef.current) return;
-    const { scrollLeft, clientWidth } = containerRef.current;
-    const newScroll =
-      direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
-    containerRef.current.scrollTo({ left: newScroll, behavior: "smooth" });
-  };
-
   return (
-    <div className="relative w-full">
-      {/* left arrow */}
-      <button
-        onClick={() => scroll("left")}
-        className="absolute -left-6 lg:-left-12 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-90 hover:bg-gray-800 p-2 rounded-full shadow-md transition"
-      >
-        <ChevronLeft className="w-6 h-6 text-gray-800 hover:text-white transition" />
-      </button>
-
-      {/* right arrow */}
-      <button
-        onClick={() => scroll("right")}
-        className="absolute -right-6 lg:-right-12 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-90 hover:bg-gray-800  p-2 rounded-full shadow-md transition"
-      >
-        <ChevronRight className="w-6 h-6 text-gray-800 hover:text-white transition" />
-      </button>
-
-      {/* scroll container */}
-      <div
-        ref={containerRef}
-        className="w-full overflow-x-auto flex snap-x snap-mandatory scroll-smooth scrollbar-hide"
-      >
+    <div className="space-y-10 scroll-smooth">
         {/* wickpick */}
-        <div className="flex flex-col lg:flex-row items-start gap-6 w-full flex-shrink-0 snap-center p-4">
+        <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            {wickpickImages.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt={`WickPick image ${i + 1}`}
-                fill
-                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
-                  i === wickpickIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-              />
-            ))}
+            <Image
+              key={wickpickIndex}
+              src={wickpickImages[wickpickIndex]}
+              alt={`WickPick image ${wickpickIndex + 1}`}
+              fill
+              className="object-contain"
+            />
           </div>
 
           {/* scrollable text */}
@@ -157,23 +107,19 @@ export default function Projects() {
               </li>
             </ul> */}
           </div>
-        </div>
+        </section>
 
         {/* plotholes */}
-        <div className="flex flex-col lg:flex-row items-start gap-6 w-full flex-shrink-0 snap-center p-4">
+        <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            {plotholesImages.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt={`Plotholes image ${i + 1}`}
-                fill
-                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
-                  i === plotholesIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-              />
-            ))}
+            <Image
+              key={plotholesIndex}
+              src={plotholesImages[plotholesIndex]}
+              alt={`Plotholes image ${plotholesIndex + 1}`}
+              fill
+              className="object-contain"
+            />
           </div>
 
           {/* scrollable text */}
@@ -184,23 +130,19 @@ export default function Projects() {
             <h4 className="text-xl font-medium">Pothole Detection Platform (HackUMass 2025 Winner)</h4>
             <p>Cities often lack clear tools for visualizing road damage and prioritizing repairs. Plotholes is a platform that maps potholes using public data, user reports, and computer vision. I built the interactive frontend using React, Next.js, and Leaflet.js, implementing dynamic heatmaps, filters, and geospatial overlays to visualize road damage patterns. The system integrates NYC 311 data, HuggingFace computer vision models, Snowflake APIs, and a Flask backend. Our project won the hackathon’s Best Use of Snowflake API award.</p>
           </div>
-        </div>
+        </section>
 
         {/* feelscape */}
-        <div className="flex flex-col lg:flex-row items-start gap-6 w-full flex-shrink-0 snap-center p-4">
+        <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            {feelscapeImages.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt={`Feelscape image ${i + 1}`}
-                fill
-                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
-                  i === feelscapeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-              />
-            ))}
+            <Image
+              key={feelscapeIndex}
+              src={feelscapeImages[feelscapeIndex]}
+              alt={`Feelscape image ${feelscapeIndex + 1}`}
+              fill
+              className="object-contain"
+            />
           </div>
 
           {/* scrollable text */}
@@ -211,23 +153,19 @@ export default function Projects() {
             <h4 className="text-xl font-medium">Emotion-Responsive Environment (HackMIT 2025)</h4>
             <p>Digital environments rarely adapt to a user’s emotional state. Feelscape creates an immersive experience that transforms real-time biometric data into dynamic visuals and music. Our team built a full-stack pipeline using React, Next.js, Flask, and Node.js that integrates CNN-based emotion detection with generative image and music models. One key challenge was maintaining low latency across multiple AI pipelines, which we solved by designing an efficient real-time processing system. The project demonstrates how AI and biometrics can power interactive, emotion-aware environments.</p>
           </div>
-        </div>
+        </section>
 
         {/* super hamster party */}
-        <div className="flex flex-col lg:flex-row items-start gap-6 w-full flex-shrink-0 snap-center p-4">
+        <section className="flex flex-col lg:flex-row items-start gap-6 w-full p-4 snap-start">
           {/* images */}
           <div className="relative w-[700px] h-[424px] mx-auto lg:mx-0 lg:flex-shrink">
-            {hamsterImages.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt={`Super Hamster Party image ${i + 1}`}
-                fill
-                className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
-                  i === hamsterIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
-              />
-            ))}
+            <Image
+              key={hamsterIndex}
+              src={hamsterImages[hamsterIndex]}
+              alt={`Super Hamster Party image ${hamsterIndex + 1}`}
+              fill
+              className="object-contain"
+            />
           </div>
 
           {/* scrollable text */}
@@ -250,13 +188,12 @@ export default function Projects() {
               </li>
             </ul> */}
           </div>
-        </div>
+        </section>
 
         {/* wip */}
-        <div className="flex-shrink-0 w-full snap-center flex items-center justify-center p-4">
+        {/* <div className="w-full flex items-center justify-center p-4">
           <h1 className="text-6xl font-semibold">more coming soon...</h1>
-        </div>
-      </div>
+        </div> */}
     </div>
   )
 }
