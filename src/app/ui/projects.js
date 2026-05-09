@@ -10,6 +10,11 @@ export default function Projects() {
     "/wickpick_details.svg",
     "/wickpick_query.svg"
   ];
+  const wickpickAlts = [
+    "WickPick home page showing search interface",
+    "WickPick product details page",
+    "WickPick query results page"
+  ];
   const [wickpickIndex, setWickpickIndex] = useState(0);
 
   useEffect(() => {
@@ -25,6 +30,11 @@ export default function Projects() {
     "/shp_lobby.svg",
     "/shp_inventory.svg"
   ];
+  const hamsterAlts = [
+    "Super Hamster Party home screen",
+    "Super Hamster Party lobby",
+    "Super Hamster Party inventory"
+  ];
   const [hamsterIndex, setHamsterIndex] = useState(0);
 
   useEffect(() => {
@@ -37,6 +47,9 @@ export default function Projects() {
   // plotholes
   const plotholesImages = [
     "/plotholes_home.svg",
+  ];
+  const plotholesAlts = [
+    "Plotholes home page showing pothole map"
   ];
   const [plotholesIndex, setPlotholesIndex] = useState(0);
 
@@ -51,6 +64,10 @@ export default function Projects() {
   const feelscapeImages = [
     "/feelscape_home.svg",
     "/feelscape_visualizer.svg",
+  ];
+  const feelscapeAlts = [
+    "Feelscape home page interface",
+    "Feelscape emotion visualizer"
   ];
   const [feelscapeIndex, setFeelscapeIndex] = useState(0);
 
@@ -71,7 +88,7 @@ export default function Projects() {
               <Image
                 key={i}
                 src={src}
-                alt={`WickPick image ${i + 1}`}
+                alt={wickpickAlts[i]}
                 fill
                 className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
                   i === wickpickIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -121,7 +138,7 @@ export default function Projects() {
               <Image
                 key={i}
                 src={src}
-                alt={`Plotholes image ${i + 1}`}
+                alt={plotholesAlts[i]}
                 fill
                 className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
                   i === plotholesIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -148,7 +165,7 @@ export default function Projects() {
               <Image
                 key={i}
                 src={src}
-                alt={`Feelscape image ${i + 1}`}
+                alt={feelscapeAlts[i]}
                 fill
                 className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
                   i === feelscapeIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -175,7 +192,7 @@ export default function Projects() {
               <Image
                 key={i}
                 src={src}
-                alt={`Super Hamster Party image ${i + 1}`}
+                alt={hamsterAlts[i]}
                 fill
                 className={`object-contain transition-opacity duration-1000 absolute top-0 left-0 w-full h-full ${
                   i === hamsterIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'

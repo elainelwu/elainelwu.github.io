@@ -80,16 +80,16 @@ export default function Home() {
               <Skills />
             </div>
             <div className="mt-12 text-lg text-white animate-bounce select-none">
-              <Link href="#work">
+              <Link href="#projects">
                 <button>↓</button>
               </Link>
             </div>
           </div>
         </SnapSection>
 
-        <SnapSection id="work">
+        <SnapSection id="projects">
           <div className="flex flex-col items-center max-w-7xl px-6 h-full w-full overflow-y-auto py-10">
-            <h1 className="text-6xl mb-12 font-semibold">Work</h1>
+            <h1 className="text-6xl mb-12 font-semibold">Projects</h1>
             <Projects />
           </div>
         </SnapSection>
